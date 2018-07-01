@@ -20,6 +20,7 @@ public class UserController {
     @RequestMapping(value = "/subLogin",method = RequestMethod.POST,produces = "application/json;charset=utf-8")
     public String subLogin(User user){
 
+        System.out.println(user.toString());
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(),user.getPassword());
         try {
